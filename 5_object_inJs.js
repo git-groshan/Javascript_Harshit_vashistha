@@ -133,9 +133,12 @@ for(let user of users){
 
 // nested destructuring 
 
-const []=users; // const jisChizKoDestructureKrnaHai = jisChizSeDestructureKrnaHai
+const [{userName:user1Name , userId, gender:user1Gender} , user2 , {gender}]=users; // const jisChizKoDestructureKrnaHai = jisChizSeDestructureKrnaHai
 
-
+console.log(user1Name);
+console.log(userId, user1Gender); 
+console.log(user2);
+console.log(gender);
 
 
 
