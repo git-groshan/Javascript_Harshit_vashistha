@@ -249,7 +249,7 @@ function getDetails({firstName , gender , age}){
 }
 
 
-// call back function -- function passing as a argument to other function 
+// call back function -- function passed as a argument to other function 
 
 function myFunc(a){  // a can be anything array , string , obj  , function 
     console.log(a);
@@ -269,9 +269,13 @@ function fun_returning_fun(){
     function fun_inside(){
         console.log("I'm inside a fun");
     }
-    return fun_inside();
+    return fun_inside;
 }
 const ans = fun_returning_fun();
 ans();
+
+function myFunc(){
+    return function(){ return "this is fun returting fun"};
+}
 
 
