@@ -1,0 +1,29 @@
+################ How browser reads JS #############
+
+1. <script src="./index.js"></script> INSIDE    <head> tag
+at this moment browser will start reading this JS file , and will not get any reference for the html ele used in it
+bcz those are below of it and Browser has not read those yet . Hence Error will come.
+
+2. <script src="./index.js"></script>  INSIDE    <body> tag but in the end of it
+In this first Browser will parse HTML to execute 
+Now At the end it will se , It has to load the JS file and execute it .
+
+3. <script src="./index.js"  async></script> INSIDE    <head> tag
+In this HTML parsing and JS LOADING both works simultaneously but whenever LOADING  completes It's start executing even if HTML is not fully parsed.
+Hence chances of error occuring is high 
+
+4. <script src="./index.js"  defer></script> INSIDE    <head> tag
+In this HTML parsing and JS LOADING both works simultaneously , even if JS LOADING is done before HTML parsing , browser will not execute JS.
+It will wait for HTML to be fully parsed and then start executing the JS file.
+Hence this is more efficient method for linking js file.
+
+
+
+===================================================================================================================================================
+
+############## DOM (Document Object Model) ####
+Browser creates document object of HTML tree and add this object with window object
+
+
+
+
