@@ -284,6 +284,25 @@ btun.addEventListener("click" , ()=>{console.log("clicked using addEvent arrow f
 // this keyword has the value equal to the element in case of normal function
 // in case of arrow function , this has value equal to the window object 
 
+/**
+ * KEYPRESS AND MOUSE OVER EVENT
+ */
+const body = document.body;
+body.addEventListener("keypress" ,(e)=>{
+    console.log(e);
+    console.log(e.key);// returns which key is pressed 
+})
 
+const mainbtn = document.querySelector(".btn-headline");
+mainbtn.addEventListener("mouseover" , ()=>{
+    console.log("mouseover event occured")
+})
+mainbtn.addEventListener("mouseleave" , ()=>{
+    console.log("mouseleave event occured")
+});
 
+/**
+ * EVENT BUBBLING /PROPOGATION , EVENT CAPTURING , EVENT DELEGATION
+ * 
+ */
 
