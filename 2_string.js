@@ -21,7 +21,9 @@ console.log(typeof my_num , typeof my_string)
 console.log(typeof (my_num + ""));
 // string to int
 let my_num_string="34";
+let my_num_string2= +"34";
 console.log(typeof my_num_string)
+console.log(typeof my_num_string2)
 console.log(typeof +my_num_string)
 
 // typecast
@@ -35,7 +37,12 @@ console.log(typeof age)
 // concatenation of string using + operator 
 let name="Roshan"
 let umar=22
-console.log(`my name is ${name} and age is ${umar}`);
+console.log(`my name is ${name} and age is ${umar}`); // string templates
+let num1 = "17";
+let num2 = "10";
+console.log(num1 + num2); // 1710 string concatination
+console.log(+num1 + +num2); // 27 addition of 2 numbers 
+
 
 
 

@@ -1,6 +1,6 @@
 let win_num=7
 console.log("guess a number between 1 to 25")
-let num = +prompt("guess a number between 1 to 25");
+let num = +prompt("guess a number between 1 to 25"); // prompt takes input as string so to convert it into integer we have added + to convert it into number 
 console.log(typeof num);
 
     if(num===win_num){
@@ -30,6 +30,7 @@ console.log(typeof num);
     }
     // for loop similar to c++/C
     // var se declare variable bahar bhi exist krega but not in case with let  
+    // let se declared variable usi scope tak simit rehta h jabki var se declared global scope
     for(let i=0;i<=10;i++)console.log(i);
     // break and continue -- similar to c and c++
 // do while loop 
