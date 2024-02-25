@@ -1,0 +1,48 @@
+1. What is hoisting in JS?
+Ans: calling funtion before declaring it . It works ony in case of traditional function declaration
+
+2. What is lexical scope ?
+Ans- lexical scope - local varible gets preference instead of global variable if defined using same variable name 
+
+3. What is the difference between block scope and function scope ?
+Ans- let and const are block scope  but var is function scope.
+if let/const type variables are present inside a block i.e { }
+then they can only be accessed within that scope not anywhere else
+but var can be accessed out of it's scope.
+
+4. What is the difference between spread operator and rest parametres in JS?
+Ans-
+
+
+5. What are callback function?
+- function passed as a argument to other function
+- function taking function as an argument
+
+6. What is higher order function ?
+Ans- function returning funtion or function taking function as an argument 
+these kinds of function are called higher order function.
+
+7. What is forEach loop in JS ?
+Ans- 
+
+8. sorting in JS?
+Ans-
+
+9. What are iterables in JS?
+Ans- on which for of loop we can apply are iterables
+Eg- Array , string , 
+#Object in not iterables
+
+10. What is __proto__ ?
+Ans- __proto__  value reperesent the parent class of the Object i.e the current object inherited that object which is stored in __proto__ of curren object
+
+11. What is [[prototype]]?
+Ans- In JS offical documentation __proto__ is written as [[prototype]]
+They are same 
+
+## __proto__  jisko documentation me [[prototype]] likha hua h , browser k console mei __proto__ bhi likha ho skta h aur [[prototype]] bhi likha ho skta hai 
+
+
+12. what is prototype ?
+Ans- Whenever we create a function it gives a empty space which is an empty object
+which is called prototype of function.

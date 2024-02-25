@@ -57,7 +57,7 @@ class Animal{
 
     eat(){return `${this.name} is eating `}
 
-    isSuperCute(){return `${this.name} is usper cute`}
+    isSuperCute(){return `${this.name} is super cute`}
 
     isCute(){return true}
 
@@ -69,7 +69,7 @@ console.log(a1.isCute());
 console.log(a1.isSuperCute());
 
 
-console.log("Inheritance in Js using extend keyword ");
+console.log("Inheritance in Js using extend keyword "); // similar to JAVA programming language 
 
 class Dog extends Animal{
    constructor(name , age , speed){
@@ -108,24 +108,29 @@ console.log(tommy.eat);
     }
     fullName(){return `${this.firstName} ${this.lastName}`};
     // using get we don't need to use () , it becomes a property of class 
-     get fullName_using_get(){return `${this.firstName} ${this.lastName}`};
-      setName(firstName , lastName){
+     get fullName_using_get()
+     { 
+        // using get keyword fullName_using_get becomes the property of Person class . It's no longer  a method 
+        return `${this.firstName} ${this.lastName}`
+    };
+    
+    setName(firstName , lastName){
         this.firstName=firstName
         this.lastName=lastName
-      };
+    };
 
-      set fullName(fullName){
+    set fullName(fullName){ // using set fullName becomes a property of class not a method
             const [firstName , lastName]=fullName.split(" ")
             this.firstName=firstName;
             this.lastName=lastName;
-      }
+    };
  };
  const  person1 = new Person("hars" ,"sharma" , 24);
  console.log(person1.firstName);
  console.log(person1.lastName);
  console.log(person1.fullName);// return fucntion definition
 //  console.log(person1.fullName()) // returns function output / returns what function returns 
- console.log(person1.fullName_using_get);
+ console.log(person1.fullName_using_get); // this one is the function but also working as a property of the class
 
  person1.setName("mohit","agarw");
  console.log(person1.firstName);

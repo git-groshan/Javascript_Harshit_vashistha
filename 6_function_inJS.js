@@ -11,12 +11,17 @@ function printHBD(){
 //function call
 printHBD();
 
-// function Expression 
+// function Expression means assigning funtion in a variable 
+/*
+const/let/var  = function(){ 
+    // code of funcion 
+}
+*/
 const showHBd = function(){
     console.log("Happy Birthday to you");
 }
 
-showHBd();
+showHBd(); // to call function expression variable_name()
 
 function add(a,b){
   //  console.log(a+b);
@@ -29,7 +34,7 @@ let sum=function(a , b){
 let a = add(2,4);
 console.log(add()); //NaN-> Not a Number 
 console.log(undefined + undefined)//NaN-> Not a Number 
-console.log( 2+ undefined)//NaN-> Not a Number 
+console.log( 2 + undefined)//NaN-> Not a Number 
 
 function isEvenOrOdd(num){
     return num&1?"Odd":"Even";
@@ -53,7 +58,7 @@ console.log(isInArray(nums, undefined));
 console.log(isInArray(nums, 1));
 
 const findTarget=function(arr , tg){
-    for(let i in arr)
+    for(let i in arr) // for in loop iterates on idx of array
         if(arr[i]===tg) return i;
     return -1;
 }
@@ -80,12 +85,14 @@ function printHW(){
 }
 console.log("using Normal function def ")
 printHW();
+// function expression 
 const sayHw = function(){
     console.log("Hello World");
 }
-console.log("using Normal function def ")
+console.log("using Normal function expression ")
 sayHw();
 console.log("to convert a fun experesion to arrow function just remove the function keyword and add => after ()")
+//Arrow function 
 const greetHW = ()=>{
     console.log("Hello world")
 }
@@ -115,11 +122,11 @@ const isOdd = n => n&1; // this is a arrow fun with one arg
 
 // hoisting : calling funtion before declaring it . It works ony in case of traditional function declaration
 
-hello();
+hello(); // function called before declaring/defining  it 
 function hello(){
     console.log("hello world");
 }
-// if we try to use a varibale before declaring it , then in case of varibale defined using var will not give and error but let and const would give it 
+// if we try to use a varibale before declaring it , then in case of varibale defined using var will not give an error but let and const would give it 
 // console.log(var_variable) // also givibg error don't know why?
 // var_variable=" this is var_variable";
 // console.log(var_variable)
@@ -133,15 +140,16 @@ function hello(){
 console.log("function inside func");
 
 const app = ()=>{
+    console.log("Inside app function ")
     const app_inside = ()=>{
-       console.log(" inside app_inside") ;
+       console.log(" inside app_inside function ") ;
     }
     const addition = (n1, n2 )=> n1+n2;
 
     const mul=(n1,n2)=> n1*n2;
-    app_inside();
-    console.log(addition(2,4));
-    console.log(mul(3,4));
+    app_inside(); // it can only be called inside app() because it is defined inside it so it's scope is inside this function 
+    console.log(addition(2,4)); // only called inside app
+    console.log(mul(3,4)); // only called inside app function 
 }
 
 app();
@@ -150,19 +158,19 @@ app();
 
 function myapp(){
     const myvar="val1";
-    function myfun(){
+    function myfun(){ // normal function 
         const myvar="val69";
 
         console.log("inside myfunc" , myvar);
     }
 
-    const myfun2 = function(){
+    const myfun2 = function(){ // function expression 
         function fun_in(){
             console.log("I'm in fun_in");
         }
     }
 
-    const myfun3 = ()=>{}
+    const myfun3 = ()=>{} // arrow function 
     console.log(myvar);
 }
 myapp();
@@ -185,10 +193,13 @@ let s1 = "student";
 function student(){
     if(true){
         let s1 ="Rosham";
+        var title = "Gupta"; // function scope 
         console.log(s1);
     }
-    console.log(s1)
+    console.log(s1); // student
+    console.log(title);
 }
+// console.log(title); 
 student();
 
 // Default Paramteres 
@@ -205,7 +216,7 @@ const sum2=(n1, n2 =0)=> n1+n2;
 console.log(sum2(2,3));
 
 
-// rest parametres  -- always an array
+// rest parametres  --> always an array
 function addnNum(a, b ,c ,d){
     console.log(`a is ${a}`);
     console.log(`b is ${b}`);
@@ -213,9 +224,11 @@ function addnNum(a, b ,c ,d){
 }
 addnNum(1,2,3,4,5,6);// only first 3 will be printed 
 
-function restParam(a , b , ...c){
+function restParam(a , b , ...c){ // 
     console.log(`a is ${a}`);
     console.log(`b is ${b}`);
+    console.log(c);
+    console.log(Array.isArray(c));
     console.log(`c is ` , c);
 }
 restParam(11,22,undefined,3,7,3,4,2,true, NaN,null);
@@ -239,12 +252,13 @@ const Person={
 }
 
 function getDeatis(Obj){
-    console.log(Obj.firstName);
-    console.log(Obj.gender);
+    console.log(Obj.firstName);//Harshit
+    console.log(Obj.gender); // male
+    console.log(Obj.age); // undefined
 }
 function getDetails({firstName , gender , age}){
-    console.log(Obj.firstName);
-    console.log(Obj.gender);
+    console.log(firstName);
+    console.log(gender);
     console.log(age)
 }
 
@@ -257,7 +271,7 @@ function myFunc(a){  // a can be anything array , string , obj  , function
 }
 
 
-function call_back(a){
+function call_back(a){ // function taking function as an argument
     a()
 }
 call_back(myFunc);  // this is call back 
@@ -274,6 +288,7 @@ function fun_returning_fun(){
 const ans = fun_returning_fun();
 ans();
 
+// another way of writing function returning function 
 function myFunc(){
     return function(){ return "this is fun returting fun"};
 }

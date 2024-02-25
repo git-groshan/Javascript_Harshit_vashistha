@@ -1,5 +1,6 @@
 // Iterables - Jispe hum " for of " loop laga skte hai 
-//Eg- Array , strings are Iterble 
+//Eg- Array , strings are Iterble
+//Eg- Set , map 
 
 for(let ch of "Roshan"){
     console.log(ch);
@@ -9,17 +10,17 @@ for(let ch of "Roshan"){
 // Object is not Iterable 
 
 // Array like Objets - woh hote hai jinke pass length property hoti hai aur jinko hum index se access kar skte hai 
-
+//Eg- string 
 
 /**
  * Set in JS
  * It is Iterbale , has it's own methods , No-index based access , 
  * Order is not guaranteed 
- * stores unique Items only 
+ * stores unique Items only(No duplicates allowed) 
  * create using new keyword and constructor can have iterable as argu 
- * No length property
+ * Set has No length property
  */
-
+const numbers = [1,2,3,4];
 const set1 = new Set([1,2,3,4,3,4]);
 console.log(set1);
 console.log(set1[0]); // returns undefined cuz no index based 
@@ -45,6 +46,10 @@ for(let sItem of myset){
 const arr = [1,2,3,1,3,4,5];
 const uni= new Set(arr);
 console.log(uni);
+console.log(uni.length);//undefined
+length = 0;
+for(let item of uni) length++;
+console.log("uni set length is " , length);
 
 
 // Maps 
@@ -53,6 +58,7 @@ console.log(uni);
  * stored key value pair like Object but in ordered fashion
  * Duplicate keys are not allowed
  * Objects can only have string literal as a key but map can have anything as a key like array, string , integer etc
+ * Map store key value pairs in an array where each key value pair is stored in their respective array
  */
 // Object literal can onlye have string or symbol as a key
 // key -> string / symbol
@@ -73,6 +79,7 @@ per.set(1,"one");
 per.set({'key1':"val1" , "key2":"val2"} , "object lteral")
 console.log(per);
 // accessing key value pair using get();
+// we can not use . or [] method to get value of particular key 
 console.log(per.get('fname'))
 console.log(per.get(1))
 console.log(per.get(['favfood','favMov']))
@@ -137,8 +144,8 @@ const user={
     address:{houseno:1234}
 };
 
-console.log(user.firstname);// directly printing the firstname
-console.log(user?.firstname);// chekcing if firstName is undefined or not , ifundefined then return undefined and break execution after it 
+console.log(user.firstname);// directly printing the firstname no matter what it is defined or undefined 
+console.log(user?.firstname);// chekcing if firstName is undefined or not , if undefined then return undefined and break execution of that statement  and continue further statment execution 
 console.log(user.address);
 console.log(user?.address?.houseno)
 

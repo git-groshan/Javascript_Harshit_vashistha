@@ -18,13 +18,13 @@ console.log("FUNCTION GIVES US EMPTY OBJECT OR FREE SPACE WHICH IS CALLED PROTOT
 console.log("only fucntion provided protype property")
 console.log(hello.prototype); // return {} empty object
 
-if(hello.prototype) console.log("property is present");
+if(hello.prototype) console.log("property is present"); // this is printed
 else console.log("protype not present ");
 console.log("proving that protype property is only related to fucntion object")
 
 const obj={key1:"val1"};
 if(obj.prototype) console.log("property is present to obj");
-else console.log("protype not present to obj ");
+else console.log("protype not present to obj ");// this is printed
 
 hello.prototype.abc="abc"
 hello.prototype.xyz="xyz"
@@ -92,7 +92,7 @@ console.log(u1.about());
 
 // constructor function -- the name should starts with Capital letter to let other know that the obj can only be created using new keyword 
 function CreateActiveUser(firstName , lastName , email , age , address){
-   //  new keyword interally set the proto of this obj/fucntion to it's prototype
+   //  new keyword interally set the __proto__ of this obj/fucntion to it's prototype
     this.firstName=firstName
     this.lastName=lastName;
     this.email=email
@@ -137,7 +137,7 @@ console.log(Object.getPrototypeOf(numbers));
     console.log("hello");
  }
 
- console.log(hello.prototype);
- hello.prototype = []
- console.log(hello.prototype);
+ console.log(hello.prototype); // {}
+ hello.prototype = []; // prototype is changed from Object {} to empty array []
+ console.log(hello.prototype);//[]
  hello.prototype.push('1');
